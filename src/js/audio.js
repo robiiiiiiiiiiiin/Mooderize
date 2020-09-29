@@ -43,7 +43,7 @@ function ytdl(id) {
             }
         };
         
-        xhr.open("GET", `http://localhost:3000/ytdl/audio/${id}`);
+        xhr.open("GET", `http://ytdl.mooderize.com/audio/${id}`);
         xhr.responseType = "blob"
         xhr.send();
     })

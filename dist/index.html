@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Music Maker</title>
+    <link rel="icon" type="image/png" href="img/MMM_icon_32.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/progressbar.css">
+</head>
+<body>
+    <header>
+            <h1><a href="/">Mood<br>Music Maker</a></h1>
+    </header>
+
+    <section class="home">
+        <div class="intro_text">
+            Make your own "MyFavouriteSong - but you're in a bathroom at a party" or any other mood.
+            If you're wondering what the hell am I speaking about, read <a href="#explanation">this</a> 
+        </div>
+
+        <div class="step_section">
+            <div class="step">First</div>
+            <div><h2 class="body_font">Choose your effect</h2></div>
+        </div>
+        <div class="vignettes_container">
+            <div class="filer_vignette" data-filter="emptymall"><img class="filter_img" src="/img/emptymall.jpg" alt="Empty mall"><div class="bg_blur"></div><p class="filter_label">Empty mall</p></div>
+            <div class="filer_vignette" data-filter="bathroom"><img class="filter_img" src="/img/bathroom.jpg" alt="Bathroom at a party"><div class="bg_blur"></div><p class="filter_label">Bathroom<br><span class="small_text">during a party</span></p></div>   
+        </div>
+        <p class="medium_text">More effects to come... <span class="tiny_text">maybe</span></p>
+
+        <div class="explanation" id="explanation">
+            <h2>What is this website about?</h2>
+            <p>Maybe you've stumbled across these kinds of videos before.</p>
+            
+            <div class="ytVideoContainer">
+                <div class="ytVideo"><iframe src="https://www.youtube.com/embed/Hge3amr5nHc" allowfullscreen></iframe></div>
+                <div class="ytVideo"><iframe src="https://www.youtube.com/embed/R7k-dw24XXI" allowfullscreen></iframe></div>
+            </div>
+            </div>
+            <p>Can you feel than comfy, nostalgic, appeasing mood emanating? Here, you can put those effects on any songs you want.</p>
+        </div>
+    </section>
+
+    <section class="uploading hidden">
+        <div class="step_section">
+            <div class="step">Then</div>
+            <div><h2 class="body_font">Give me your song</h2></div>
+            <div class="smaller_text">You chose: <span id="youChose"></span></div>
+        </div>
+
+        <div class="centered">
+            <div class="uploading_fields">
+                <div class="ytLinkContainer">
+                    <img src="/img/youtubeLogo.svg" alt="YouTube logo" id="youtubeLogo">
+                    <input type="text" id="youtubeLink" placeholder="YouTube link">
+                    <button class="hidden">Load</button>
+                </div>
+                <div class="yt_error hidden"></div>
+                <div class="or">Or</div>
+                <div class="fileSelector_container">
+                    <input type="file" id="fileSelector"><!-- accept=".mp3, .wav" -->
+                    <button class="size1">
+                        <label for="fileSelector">
+                            <span class="txt_container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M 16 10 h 5 l -9 -10 l -9 10 h 5 v 11 h 8 v 0 z m 1 12 h -14 v 2 h 18 v -2 z"/></svg>
+                                Upload file
+                            </span>
+                        </label>
+                    </button>
+                </div>
+            </div>
+            <div class="embed_loading hidden">
+                <div class="lds-dual-ring"></div>
+                <div><p class="medium_text">loading ...</p></div>
+            </div>
+            <div class="uploaded hidden">
+                <p>Your song has been loaded!<br>
+                Here it is:</p>
+                <p id="fileName" class="small_text"></p>
+                <div><button class="cancel size2">Cancel</button></div>
+            </div>
+            <div class="yt_loaded hidden">
+                <div class="yt_meta">
+                    <img src="" alt="youtube thumbnail">
+                    <div>
+                        <p class="title"></p>
+                        <p class="duration"></p>
+                    </div>
+                </div>
+                <div><button class="cancel size2">Cancel</button></div>
+            </div>
+    
+            <div><button class="size1" id="applyEffect" disabled>Apply effect</button></div>
+        </div>
+    </section>
+
+    <section class="loading hidden">
+        <progress class="progress_bar" value="0" max="100">
+            <div class="progress_bar_ie">
+                <span style="width: 0%;"></span>
+            </div>
+        </progress>
+        <label class="medium_text loading_state" for="progress_bar">Loading</label>
+    </section>
+
+    <section class="voila hidden">
+        <div class="step_section">
+            <div class="step">Voila!</div>
+            <div><h2 class="body_font">Here is your modified song</h2></div>
+        </div>
+
+        <div class="centered">
+            <audio controls src="" type="audio/wav" id="preview"></audio>
+            <div class="slider_container">
+                <p>Effect&nbsp;amount:</p>
+                <input type="range" min="1" max="10" value="7" class="slider" id="amount_slider">
+                <input type="number" id="amount_nb" value="7" disabled>
+            </div>
+            <button class="size2" id="regenerate" disabled>re-generate</button>
+            <div><a href="" download id="downloadLink">
+                <button class="size1" id="dlModifiedSong">
+                    <span class="txt_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M 16 11 h 5 l -9 10 l -9 -10 h 5 v -11 h 8 v 11 z m 1 11 h -14 v 2 h 18 v -2 z"/></svg>
+                        Download
+                    </span>
+                </button>
+            </a></div> 
+            <div class="small_text"><a href="/">Take me home</a></div>
+        </div>
+    </section>
+
+    <footer>
+        <div><a href="/about.html">About</a></div>
+    </footer>
+
+    <script src="js/bundle.js"></script>
+</body>
+</html>

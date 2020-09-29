@@ -1,0 +1,17 @@
+{
+    "name": "Mood Music Maker",
+    "short_name": "MMM",
+    "description": "Make your own \"MyFavouriteSong - but you're in a bathroom at a party\" or any other mood.",
+    "lang": "en",
+    "start_url" : "/index.html",
+    "display": "fullscreen",
+    "background_color": "white",
+    "theme_color": "#82479B",
+    "icons": [
+      {
+        "src": "img/MMM_icon_32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      }
+    ]
+  }

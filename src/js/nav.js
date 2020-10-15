@@ -118,7 +118,7 @@ yt_load_btn.addEventListener('click', () => {
         }
     };
     
-    xhr.open("GET", `http://localhost:3000/ytdl/metadata/${encodeURIComponent(link)}`);
+    xhr.open("GET", `https://ytdl.mooderize.com/metadata/${encodeURIComponent(link)}`);
     xhr.responseType = "json"
     xhr.send();
 

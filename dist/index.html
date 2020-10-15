@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mooderize</title>
+    <title>Mooderize - Music played in another place / room</title>
+    <meta name="description" content="Mooderize lets you apply places effects on whatever music you want. You can make &quot;your song&quot; but you're in a bathroom at a party, or played in an empty mall."/>
+    <meta name="theme-color" content="#82479B">
     <link rel="icon" type="image/png" href="img/MMM_icon_32.png">
+    <link rel="apple-touch-icon" href="img/MMM_icon_192.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">  
@@ -13,7 +16,7 @@
 </head>
 <body>
     <header>
-            <h1><a href="/">Mood<br>Music Maker</a></h1>
+            <h1><a href="/">Mooderize</a></h1>
     </header>
 
     <section class="home">
@@ -133,10 +136,29 @@
         </div>
     </section>
 
+    <section class="about hidden">
+        <h2>About me</h2>
+        <p>
+            Hi, I'm <a href="https://github.com/robiiiiiiiiiiiin" target="blank">Robin</a>, a young web developer. I made this website for fun during my freetime. So please be gentle about it, I know that it's far from being perfect. But if you still like it despite its defaults, you make me a happy man.
+        </p>
+        <h2>About mooderize</h2>
+        <p>
+            <ul>
+                <li>Mooderize is open source, the sources are on <a href="https://github.com/robiiiiiiiiiiiin/Mooderize" target="blank">github</a>. Feel free to copy anything for your own project.</li>
+                <li>Mooderize uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="blank">Web Audio API</a>. So the audio processing is done on your own machine. It means that the better your computer or smartphone is, the faster the loading will be.</li>
+            </ul>
+        </p>
+        <h2>About Privacy</h2>
+        <p>
+            The uploaded files don't leave your computer. Only YouTube links are sent to an external server, but I promise that I won't look at it! The website doesn't even use cookie lmao.
+        </p>
+    </section>
+
     <footer>
-        <div><a href="/about.html">About</a></div>
+        <div><a href="/#section=about">About</a></div>
     </footer>
 
     <script src="js/bundle.js"></script>
+    <script src="sw_loader.js"></script>
 </body>
 </html>

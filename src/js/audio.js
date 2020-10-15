@@ -11,8 +11,6 @@ let progress_bar = document.querySelector('.progress_bar')
 let downloadLink = document.querySelector('#downloadLink')
 let preview = document.querySelector('#preview')
 let loading_state = document.querySelector('.loading_state')
-let test_btn = document.querySelector('#ytTest')
-let yt_input = document.querySelector('#youtubeLink')
 let regenerate = document.querySelector('#regenerate')
 let amount_slider = document.querySelector('#amount_slider')
 
@@ -33,6 +31,7 @@ function ytdl(id) {
         }
         
         xhr.onerror = function() { 
+            update_progress('0', 'An error occured')
             reject("Cannot download YouTube video")
         };
         xhr.onload = function() {
@@ -43,7 +42,7 @@ function ytdl(id) {
             }
         };
         
-        xhr.open("GET", `http://ytdl.mooderize.com/audio/${id}`);
+        xhr.open("GET", `https://ytdl.mooderize.com/audio/${id}`);
         xhr.responseType = "blob"
         xhr.send();
     })

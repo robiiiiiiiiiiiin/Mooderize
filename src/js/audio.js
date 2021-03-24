@@ -42,7 +42,7 @@ function ytdl(id) {
             }
         };
         
-        xhr.open("GET", `https://ytdlapirest.herokuapp.com/audio/${id}`);
+        xhr.open("GET", `https://ytdl.mooderize.com/audio/${id}`);
         xhr.responseType = "blob"
         xhr.send();
     })

@@ -118,7 +118,7 @@ yt_load_btn.addEventListener('click', () => {
         }
     };
     
-    xhr.open("GET", `https://ytdl.mooderize.com/metadata/${encodeURIComponent(link)}`);
+    xhr.open("GET", `https://ytdlapirest.herokuapp.com/metadata/${encodeURIComponent(link)}`);
     xhr.responseType = "json"
     xhr.send();
 
